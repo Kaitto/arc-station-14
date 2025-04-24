@@ -37,34 +37,37 @@
   parent: ClothingOuterArmorBasic
   id: ClothingOuterHardsuitNTPD
   name: NTPD hardsuit
-  description: It looks like it was copied from somewhere. A note from the developer reads "The server was crashing without this, so emergency patch until Guloveos wakes up."
+  description: A standard issue hardsuit worn by NTPD operatives. If you see this breaking down your door, it may be best to find a hiding spot.
   components:
   - type: Sprite
     sprite: _Arc/Clothing/OuterClothing/Hardsuits/ntpd.rsi
   - type: Clothing
     sprite: _Arc/Clothing/OuterClothing/Hardsuits/ntpd.rsi
+  - type: FireProtection
+    reduction: 1
   - type: ExplosionResistance
     damageCoefficient: 0.05
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.80
-        Slash: 0.90
-        Piercing: 0.80
-        Caustic: 0.60
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.7
+        Radiation: 0.6
+        Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1
+    sprintModifier: 1
   - type: HeldSpeedModifier
   - type: StaminaDamageResistance
-    coefficient: 0.7
+    coefficient: 0.5
   - type: ToggleableClothing
     slot: head
     clothingPrototype: ClothingHeadHelmetHardsuitNTPD
   - type: Tag
     tags:
     - Hardsuit
-    - WhitelistChameleon
     - HidesHarpyWings
     - FullBodyOuter
 
