@@ -148,3 +148,32 @@
     maximumWait: 240
   - type: SpeakOnUIClosed
     pack: BlockGameGoodbyes
+
+- type: entity
+  id: CustomGameArcade
+  description: An arcade cabinet with a modified game.
+  name: Custom ROM game
+  parent: ArcadeBase
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/arcade.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: arcade
+    - map: ["computerLayerScreen"]
+      state: screen_blockgame
+    - map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      state: panel
+      visible: false
+  - type: CustomGameArcade
+    DebugValue: 512
+  - type: ActivatableUI
+    key: enum.CustomGameUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: StationAiWhitelist
+  - type: UserInterface
+    interfaces:
+      enum.CustomGameUiKey.Key:
+        type: CustomGameBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
