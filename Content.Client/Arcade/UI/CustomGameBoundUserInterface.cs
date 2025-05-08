@@ -1,4 +1,5 @@
 using Content.Shared.Arcade;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using System;
 using static Content.Shared.Arcade.SharedCustomGameArcadeComponent;

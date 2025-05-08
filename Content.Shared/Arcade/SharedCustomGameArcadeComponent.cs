@@ -1,7 +1,6 @@
 using Robust.Shared.Physics;
 using Robust.Shared.Serialization;
 using System.Numerics;
-using static Content.Shared.Arcade.SharedSpaceVillainArcadeComponent;
 using Vector3 = Robust.Shared.Maths.Vector3;
 
 namespace Content.Shared.Arcade
@@ -37,7 +36,7 @@ namespace Content.Shared.Arcade
             public readonly List<EntityData> EntityData;
             public CustomGameUpdateMessage(List<EntityData> entityData)
             {
-                EntityData=entityData;
+                EntityData = entityData;
             }
         }
         [Serializable, NetSerializable]
@@ -61,7 +60,9 @@ namespace Content.Shared.Arcade
                 rotation = rotation.Set(rotation.Angle + (float) inputRotation * delta);
 
                 Angle = rotation.Angle;
-                position.Xy += velocity * delta;
+                var dt = velocity * delta;
+                position.X += dt.X;
+                position.Y += dt.Y;
 
                 velocity *= 0.95f;
             }
